@@ -39,11 +39,19 @@
         .media-item img, .media-item video { width: 100%; height: 210px; object-fit: cover; border-radius: 6px; background-color: #000000; display: block; }
         .media-caption { font-size: 0.8rem; color: #64748b; margin-top: 8px; font-weight: 600; font-family: monospace; }
 
+        /* Estilo para el reproductor de audio flotante */
+        .audio-player-container { position: fixed; bottom: 20px; right: 20px; z-index: 2000; background: rgba(13, 27, 42, 0.95); padding: 10px; border-radius: 30px; box-shadow: 0 4px 15px rgba(0,0,0,0.3); display: flex; align-items: center; border: 1px solid #e0a96d; }
+        .audio-player-container audio { height: 30px; width: 220px; }
+
         footer { text-align: center; padding: 2.5rem 1rem; background: #0d1b2a; color: #e0e1dd; margin-top: 5rem; font-size: 0.85rem; }
         @keyframes fadeIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
     </style>
 </head>
 <body>
+
+    <div class="audio-player-container">
+        <audio id="bg-music" src="musica.mp3" controls autoplay loop></audio>
+    </div>
 
     <nav>
         <div class="nav-container">
@@ -121,7 +129,7 @@
     <div id="sec-salud" class="section-content">
         <section class="hero" id="hero-salud">
             <h1>Cuidado de la <span style="color: #52b788;">Salud</span> y <span style="color: #52b788;">Naturaleza</span></h1>
-            <p>Registro de actividades prácticas vinculadas al entorno ecológico y prevención en medicina comunitaria.</p>
+            <p>Registro de actividades prácticas vinculadas al entorno ecolégico y prevención en medicina comunitaria.</p>
         </section>
 
         <div class="container">
@@ -188,6 +196,16 @@
             event.currentTarget.classList.add('active');
             window.scrollTo({top: 0, behavior: 'smooth'});
         }
+
+        // Intenta reproducir automáticamente en cuanto el usuario haga clic en la página
+        document.addEventListener('click', function() {
+            var audio = document.getElementById('bg-music');
+            if (audio.paused) {
+                audio.play().catch(function(error) {
+                    console.log("La reproducción automática fue bloqueada por el navegador inicialmente.");
+                });
+            }
+        }, { once: true }); // 'once: true' hace que este código solo se ejecute con el primer clic
     </script>
 </body>
 </html>
