@@ -67,4 +67,157 @@
         </div>
     </nav>
 
-    <div id="sec-programacion"
+    <div id="sec-programacion" class="section-content active">
+        <section class="hero" id="hero-programacion">
+            <h1>Capacitación en <span style="color: #00e676;">Programación</span></h1>
+            <p>Monitoreo físico de componentes, lógica de desarrollo y control de circuitos embebidos.</p>
+        </section>
+
+        <div class="container">
+            <div class="card card-prog">
+                <h2>Galería Física: Ensamble y Diagnóstico</h2>
+                <div class="media-gallery">
+                    <div class="media-item">
+                        <img src="./IMG-20260608-WA0048.jpg" alt="Módulo Arduino">
+                        <div class="media-caption">IMG-20260608-WA0048.jpg</div>
+                    </div>
+                    <div class="media-item">
+                        <img src="./IMG-20260608-WA0022.jpg" alt="Módulo RAM">
+                        <div class="media-caption">IMG-20260608-WA0022.jpg</div>
+                    </div>
+                    <div class="media-item">
+                        <img src="./IMG-20260608-WA0021.jpg" alt="Limpieza CPU">
+                        <div class="media-caption">IMG-20260608-WA0021.jpg</div>
+                    </div>
+                    <div class="media-item">
+                        <img src="./IMG-20260608-WA0023.jpg" alt="Gabinete Chasis">
+                        <div class="media-caption">IMG-20260608-WA0023.jpg</div>
+                    </div>
+                </div>
+
+                <h3>Demostraciones en Video del Firmware</h3>
+                <div class="media-gallery">
+                    <div class="media-item">
+                        <video controls preload="metadata">
+                            <source src="./VID-20260608-WA0031.mp4" type="video/mp4">
+                        </video>
+                        <div class="media-caption">VID-20260608-WA0031.mp4</div>
+                    </div>
+                    <div class="media-item">
+                        <video controls preload="metadata">
+                            <source src="./VID-20260608-WA0033.mp4" type="video/mp4">
+                        </video>
+                        <div class="media-caption">VID-20260608-WA0033.mp4</div>
+                    </div>
+                    <div class="media-item">
+                        <video controls preload="metadata">
+                            <source src="./VID-20260608-WA0051.mp4" type="video/mp4">
+                        </video>
+                        <div class="media-caption">VID-20260608-WA0051.mp4</div>
+                    </div>
+                    <div class="media-item">
+                        <video controls preload="metadata">
+                            <source src="./VID-20260608-WA0049.mp4" type="video/mp4">
+                        </video>
+                        <div class="media-caption">VID-20260608-WA0049.mp4</div>
+                    </div>
+                    <div class="media-item">
+                        <video controls preload="metadata">
+                            <source src="./VID-20260608-WA0059.mp4" type="video/mp4">
+                        </video>
+                        <div class="media-caption">VID-20260608-WA0059.mp4</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="sec-salud" class="section-content">
+        <section class="hero" id="hero-salud">
+            <h1>Cuidado de la <span style="color: #52b788;">Salud</span> y <span style="color: #52b788;">Naturaleza</span></h1>
+            <p>Registro de actividades prácticas vinculadas al entorno ecológico y prevención en medicina comunitaria.</p>
+        </section>
+
+        <div class="container">
+            <div class="card card-salud">
+                <h2>Evidencias Clínicas y de Campo</h2>
+                <div class="media-gallery">
+                    <div class="media-item">
+                        <img src="./IMG-20260608-WA0053.jpg" alt="Huerto Escolar">
+                        <div class="media-caption">IMG-20260608-WA0053.jpg</div>
+                    </div>
+                    <div class="media-item">
+                        <img src="./IMG-20260608-WA0050.jpg" alt="Práctica de Presión Arterial">
+                        <div class="media-caption">IMG-20260608-WA0050.jpg</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="sec-eventos" class="section-content">
+        <section class="hero" id="hero-eventos">
+            <h1><span style="color: #e0a96d;">Evento</span> y <span style="color: #e0a96d;">Capacitaciones</span></h1>
+            <p>Espacio institucional destinado a registrar muestras técnicas e integración de la comunidad estudiantil.</p>
+        </section>
+
+        <div class="container">
+            <div class="card card-event">
+                <h2>Registro Temático y Memorias</h2>
+                <div class="media-gallery">
+                    <div class="media-item">
+                        <img src="./IMG-20260608-WA0054.jpg" alt="Actividad Cultural">
+                        <div class="media-caption">IMG-20260608-WA0054.jpg</div>
+                    </div>
+                </div>
+
+                <h3>Videos Adicionales de las Muestras</h3>
+                <div class="media-gallery">
+                    <div class="media-item">
+                        <video controls preload="metadata">
+                            <source src="./VID-20260608-WA0060.mp4" type="video/mp4">
+                        </video>
+                        <div class="media-caption">VID-20260608-WA0060.mp4</div>
+                    </div>
+                    <div class="media-item">
+                        <video controls preload="metadata">
+                            <source src="./VID-20260608-WA0061.mp4" type="video/mp4">
+                        </video>
+                        <div class="media-caption">VID-20260608-WA0061.mp4</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Plataforma Integradora de Evidencias Técnicas.</p>
+    </footer>
+
+    <script>
+        function switchTab(sectionId) {
+            document.querySelectorAll('.section-content').forEach(sec => sec.classList.remove('active'));
+            document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+            document.getElementById('sec-' + sectionId).classList.add('active');
+            event.currentTarget.classList.add('active');
+            window.scrollTo({top: 0, behavior: 'smooth'});
+        }
+
+        // Activador de audio bypass para restricciones de navegadores modernos
+        function desbloquearAudio() {
+            var audio = document.getElementById('bg-music');
+            if (audio && audio.paused) {
+                audio.play().catch(function(error) {
+                    console.log("Esperando una interacción directa para soltar el codec de audio.");
+                });
+            }
+        }
+
+        // Detecta cualquier mínimo amago de interacción del profesor para encender la pista musica.mp3
+        window.addEventListener('scroll', desbloquearAudio, { once: true });
+        window.addEventListener('mousemove', desbloquearAudio, { once: true });
+        window.addEventListener('touchstart', desbloquearAudio, { once: true });
+        window.addEventListener('click', desbloquearAudio, { once: true });
+    </script>
+</body>
+</html>
