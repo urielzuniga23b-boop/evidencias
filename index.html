@@ -16,7 +16,6 @@
             padding: 0; 
             background-color: #f4f6f9; 
             color: #2c3e50;
-            /* EFECTO AL ENTRAR A LA PÁGINA (Toda la web aparece con suavidad) */
             animation: entradaPagina 1.2s cubic-bezier(0.16, 1, 0.3, 1) both;
         }
         
@@ -50,7 +49,6 @@
             background-position: center;
             background-repeat: no-repeat;
         }
-        /* Mantenemos la referencia de diseño de IMG_20260615_191107567_MFNR.jpg para contrastes oscuros */
         #hero-programacion { border-bottom: 6px solid #00e676; }
         #hero-salud { border-bottom: 6px solid #52b788; }
         #hero-eventos { border-bottom: 6px solid #e0a96d; }
@@ -61,7 +59,6 @@
         /* Contenedores Principales */
         .container { max-width: 1000px; margin: 2.5rem auto; padding: 0 1.5rem; min-height: 400px; }
         
-        /* EFECTO AL CAMBIAR DE LUGAR (Las pestañas ocultas/activas) */
         .section-content { display: none; opacity: 0; }
         .section-content.active { 
             display: block; 
@@ -79,7 +76,7 @@
         /* Cuadrícula Multimedia */
         .media-gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; margin-top: 1.5rem; }
         
-        /* EFECTO EN LOS CUADROS DE IMÁGENES Y VIDEOS (Hover y Presión) */
+        /* EFECTO EN LOS CUADROS DE IMÁGENES Y VIDEOS */
         .media-item { 
             background: #f8fafc; 
             border: 1px solid #e2e8f0; 
@@ -90,13 +87,11 @@
             transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1); 
             cursor: pointer;
         }
-
         .media-item:hover, .media-item:active {
             transform: translateY(-8px) scale(1.03); 
             box-shadow: 0 12px 20px rgba(0, 0, 0, 0.12); 
             background: #ffffff;
         }
-        
         .card-prog .media-item:hover { border-color: #00e676; }
         .card-salud .media-item:hover { border-color: #52b788; }
         .card-event .media-item:hover { border-color: #e0a96d; }
@@ -111,10 +106,9 @@
             transition: filter 0.3s ease;
         }
         .media-item:hover img { filter: brightness(1.05); }
-        
         .media-caption { font-size: 0.8rem; color: #64748b; margin-top: 10px; font-weight: 600; font-family: monospace; }
 
-        /* SECCIÓN: ¡CONTÁCTANOS! (Fiel a la foto IMG_20260615_191107567_MFNR.jpg) */
+        /* SECCIÓN DE CONTACTO */
         .contact-section { 
             background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%); 
             color: #ffffff; 
@@ -168,9 +162,63 @@
         }
         .btn-submit:hover { background-color: #be123c; transform: scale(1.05) translateY(-2px); box-shadow: 0 5px 15px rgba(225, 29, 72, 0.4); }
 
-        /* Reproductor de Audio Flotante */
-        .audio-player-container { position: fixed; bottom: 20px; right: 20px; z-index: 2000; background: rgba(13, 27, 42, 0.95); padding: 10px; border-radius: 30px; box-shadow: 0 4px 15px rgba(0,0,0,0.3); display: flex; align-items: center; border: 1px solid #e0a96d; }
-        .audio-player-container audio { height: 30px; width: 220px; }
+        /* ================= NUEVO DISEÑO DE LOGO Y AUDIO FLOTANTE ================= */
+        .audio-player-container { 
+            position: fixed; 
+            bottom: 20px; 
+            right: 20px; 
+            z-index: 2000; 
+            background: #0d1b2a; 
+            padding: 10px 14px; 
+            border-radius: 40px; 
+            box-shadow: 0 6px 20px rgba(0,0,0,0.4); 
+            display: flex; 
+            align-items: center; 
+            gap: 10px;
+            border: 2px solid #e0a96d; 
+            max-width: 54px; /* Oculto inicialmente por defecto */
+            overflow: hidden;
+            transition: max-width 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        /* Se despliega sutilmente al pasar el mouse por encima o tocarlo */
+        .audio-player-container:hover, .audio-player-container:active { 
+            max-width: 300px; 
+        }
+
+        /* Contenedor del logo decorativo musical */
+        .audio-logo-wrapper {
+            background-color: #1b263b;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            border: 1px solid #e0a96d;
+        }
+
+        /* Icono de vinilo / nota musical */
+        .audio-logo-wrapper i {
+            color: #e0a96d;
+            font-size: 1rem;
+        }
+
+        /* Animación activa de rotación cuando la música suena */
+        .rotar-logo {
+            animation: girarDisco 3s linear infinite;
+        }
+
+        .audio-player-container audio { 
+            height: 30px; 
+            width: 210px; 
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+        .audio-player-container:hover audio, .audio-player-container:active audio {
+            opacity: 1;
+        }
 
         footer { text-align: center; padding: 2.5rem 1rem; background: #070a12; color: #64748b; font-size: 0.85rem; }
 
@@ -183,12 +231,19 @@
             0% { opacity: 0; transform: translateX(-15px); }
             100% { opacity: 1; transform: translateX(0); }
         }
+        @keyframes girarDisco {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
     </style>
 </head>
 <body>
 
-    <!-- REPRODUCTOR DE AUDIO FLOTANTE -->
-    <div class="audio-player-container">
+    <!-- REPRODUCTOR DE AUDIO FLOTANTE CON LOGOTIPO MODERNO -->
+    <div class="audio-player-container" id="music-container">
+        <div class="audio-logo-wrapper" id="logo-disco">
+            <i class="fa-solid fa-compact-disc"></i>
+        </div>
         <audio id="bg-music" src="./musica.mp3" controls autoplay loop playsinline></audio>
     </div>
 
@@ -327,7 +382,7 @@
         </div>
     </div>
 
-    <!-- ================= SECCIÓN GLOBAL DE CONTACTO CORREGIDA ================= -->
+    <!-- ================= SECCIÓN GLOBAL DE CONTACTO ================= -->
     <section class="contact-section">
         <h2>¡Contáctanos!</h2>
         <p>¿Preguntas? Nos encantaría escucharte.</p>
@@ -347,7 +402,6 @@
             </div>
         </div>
 
-        <!-- Formulario configurado con JavaScript nativo para evitar errores de servidor externo -->
         <form class="contact-form" onsubmit="enviarCorreo(event)">
             <div class="form-group">
                 <input type="text" id="form-name" placeholder="Tu nombre" required>
@@ -371,25 +425,31 @@
     </footer>
 
     <script>
-        // Función inteligente para procesar el envío sin depender de servidores
+        const audio = document.getElementById('bg-music');
+        const disco = document.getElementById('logo-disco');
+
+        // Monitorea el estado de la música para encender o apagar la rotación del logo
+        audio.addEventListener('play', () => {
+            disco.classList.add('rotar-logo');
+        });
+        audio.addEventListener('pause', () => {
+            disco.classList.remove('rotar-logo');
+        });
+
         function enviarCorreo(event) {
-            event.preventDefault(); // Detiene la recarga de página molesta
-            
+            event.preventDefault();
             const nombre = document.getElementById('form-name').value;
             const correoRemitente = document.getElementById('form-email').value;
             const mensaje = document.getElementById('form-message').value;
             
             const correoDestino = "urielzuniga23b@cancuntresbonfil.edu.mx";
             const asunto = encodeURIComponent("Contacto desde Portal de Evidencias - " + nombre);
-            
-            // Cuerpo estructurado del correo
             const cuerpo = encodeURIComponent(
                 "Nombre: " + nombre + "\n" +
                 "Correo de contacto: " + correoRemitente + "\n\n" +
                 "Mensaje:\n" + mensaje
             );
             
-            // Abre de inmediato el cliente de correo sin errores de servidor
             window.location.href = `mailto:${correoDestino}?subject=${asunto}&body=${cuerpo}`;
         }
 
@@ -407,7 +467,6 @@
         }
 
         function desbloquearAudio() {
-            var audio = document.getElementById('bg-music');
             if (audio && audio.paused) {
                 audio.play().catch(function(error) {
                     console.log("Esperando interacción.");
