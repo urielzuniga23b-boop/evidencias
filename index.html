@@ -38,7 +38,7 @@
         .tab-btn:active { transform: translateY(1px); }
         .tab-btn.active { background-color: #e0a96d; color: #0d1b2a; border-color: #e0a96d; box-shadow: 0 4px 10px rgba(224, 169, 109, 0.3); }
 
-        /* Banners Superiores con Imagen de Fondo */
+        /* Banners Superiores con Imagen de Fondo (Referencia IMG_20260615_191107567_MFNR.jpg) */
         .hero { 
             color: #ffffff; 
             padding: 6rem 2rem; 
@@ -108,61 +108,84 @@
         .media-item:hover img { filter: brightness(1.05); }
         .media-caption { font-size: 0.8rem; color: #64748b; margin-top: 10px; font-weight: 600; font-family: monospace; }
 
-        /* SECCIÓN DE CONTACTO */
+        /* ================= REDISEÑO DE LA SECCIÓN DE CONTACTO (NUEVA) ================= */
         .contact-section { 
             background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%); 
             color: #ffffff; 
-            padding: 4rem 2rem; 
+            padding: 5rem 2rem; 
             text-align: center;
             border-top: 4px solid #e0a96d;
         }
-        .contact-section h2 { color: #ffffff; font-size: 2.5rem; margin-bottom: 0.5rem; font-weight: 700; }
-        .contact-section p { color: #94a3b8; font-size: 1.1rem; margin-bottom: 2rem; }
+        .contact-section h2 { color: #ffffff; font-size: 2.8rem; margin-bottom: 0.5rem; font-weight: 800; }
+        .contact-section p.contact-subtitle { color: #94a3b8; font-size: 1.2rem; margin-bottom: 3.5rem; max-width: 600px; margin-left: auto; margin-right: auto; }
         
-        .contact-info-row { display: flex; justify-content: center; gap: 30px; flex-wrap: wrap; max-width: 900px; margin: 0 auto 2.5rem auto; font-size: 0.95rem; }
-        .info-item { display: flex; align-items: center; gap: 8px; color: #cbd5e1; }
-        .info-item i { color: #3b82f6; font-size: 1.1rem; }
-        .info-item a { color: #cbd5e1; text-decoration: none; transition: color 0.2s; }
-        .info-item a:hover { color: #3b82f6; }
+        /* Contenedor de botones de contacto */
+        .contact-buttons-container {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            flex-wrap: wrap;
+            max-width: 800px;
+            margin: 0 auto;
+        }
 
-        .contact-form { max-width: 550px; margin: 0 auto; text-align: left; }
-        .form-group { margin-bottom: 1.2rem; }
-        .contact-form input, .contact-form textarea { 
-            width: 100%; 
-            padding: 1rem 1.2rem; 
-            border: 2px solid transparent; 
-            border-radius: 12px; 
-            background-color: #f1f5f9; 
-            font-size: 1rem; 
-            color: #334155;
-            outline: none;
-            font-family: inherit;
-            transition: all 0.3s ease;
+        /* Estilo base de los botones de contacto */
+        .contact-card-btn {
+            background-color: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 16px;
+            padding: 2.5rem 2rem;
+            width: 300px;
+            text-decoration: none;
+            color: #ffffff;
+            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
+            position: relative;
+            overflow: hidden;
         }
-        .contact-form input:focus, .contact-form textarea:focus {
-            background-color: #ffffff;
-            border-color: #3b82f6;
-            box-shadow: 0 0 8px rgba(59, 130, 246, 0.25);
-        }
-        .contact-form textarea { resize: none; height: 120px; }
-        
-        .btn-submit { 
-            background-color: #e11d48; 
-            color: #ffffff; 
-            border: none; 
-            padding: 0.9rem 2rem; 
-            font-size: 1.05rem; 
-            font-weight: 600; 
-            border-radius: 30px; 
-            cursor: pointer; 
-            display: inline-flex; 
-            align-items: center; 
-            gap: 10px;
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-        .btn-submit:hover { background-color: #be123c; transform: scale(1.05) translateY(-2px); box-shadow: 0 5px 15px rgba(225, 29, 72, 0.4); }
 
-        /* ================= NUEVO DISEÑO DE LOGO Y AUDIO FLOTANTE ================= */
+        /* Efecto hover en los botones */
+        .contact-card-btn:hover {
+            transform: translateY(-10px);
+            background-color: rgba(255, 255, 255, 0.07);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Iconos grandes */
+        .contact-card-btn i {
+            font-size: 3.5rem;
+            margin-bottom: 10px;
+            transition: transform 0.3s ease;
+        }
+        .contact-card-btn:hover i {
+            transform: scale(1.1);
+        }
+
+        /* Títulos y textos de los botones */
+        .contact-card-btn span.btn-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #ffffff;
+        }
+        .contact-card-btn span.btn-data {
+            font-size: 0.95rem;
+            color: #94a3b8;
+            font-family: monospace;
+            word-break: break-all;
+        }
+
+        /* Colores específicos para WhatsApp */
+        .btn-whatsapp i { color: #25D366; }
+        .btn-whatsapp:hover { border-color: #25D366; box-shadow: 0 15px 30px rgba(37, 211, 102, 0.2); }
+
+        /* Colores específicos para Correo */
+        .btn-email i { color: #ea4335; }
+        .btn-email:hover { border-color: #ea4335; box-shadow: 0 15px 30px rgba(234, 67, 53, 0.2); }
+
+        /* Reproductor de Audio Flotante con Logo */
         .audio-player-container { 
             position: fixed; 
             bottom: 20px; 
@@ -176,49 +199,17 @@
             align-items: center; 
             gap: 10px;
             border: 2px solid #e0a96d; 
-            max-width: 54px; /* Oculto inicialmente por defecto */
+            max-width: 54px; 
             overflow: hidden;
             transition: max-width 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            cursor: pointer;
         }
-        
-        /* Se despliega sutilmente al pasar el mouse por encima o tocarlo */
-        .audio-player-container:hover, .audio-player-container:active { 
-            max-width: 300px; 
-        }
-
-        /* Contenedor del logo decorativo musical */
-        .audio-logo-wrapper {
-            background-color: #1b263b;
-            width: 32px;
-            height: 32px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-shrink: 0;
-            border: 1px solid #e0a96d;
-        }
-
-        /* Icono de vinilo / nota musical */
-        .audio-logo-wrapper i {
-            color: #e0a96d;
-            font-size: 1rem;
-        }
-
-        /* Animación activa de rotación cuando la música suena */
-        .rotar-logo {
-            animation: girarDisco 3s linear infinite;
-        }
-
-        .audio-player-container audio { 
-            height: 30px; 
-            width: 210px; 
-            opacity: 0;
-            transition: opacity 0.4s ease;
-        }
-        .audio-player-container:hover audio, .audio-player-container:active audio {
-            opacity: 1;
-        }
+        .audio-player-container:hover, .audio-player-container:active { max-width: 300px; }
+        .audio-logo-wrapper { background-color: #1b263b; width: 32px; height: 32px; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; border: 1px solid #e0a96d; }
+        .audio-logo-wrapper i { color: #e0a96d; font-size: 1rem; }
+        .rotar-logo { animation: girarDisco 3s linear infinite; }
+        .audio-player-container audio { height: 30px; width: 210px; opacity: 0; transition: opacity 0.4s ease; }
+        .audio-player-container:hover audio, .audio-player-container:active audio { opacity: 1; }
 
         footer { text-align: center; padding: 2.5rem 1rem; background: #070a12; color: #64748b; font-size: 0.85rem; }
 
@@ -231,15 +222,12 @@
             0% { opacity: 0; transform: translateX(-15px); }
             100% { opacity: 1; transform: translateX(0); }
         }
-        @keyframes girarDisco {
-            from { transform: rotate(0deg); }
-            to { transform: rotate(360deg); }
-        }
+        @keyframes girarDisco { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
     </style>
 </head>
 <body>
 
-    <!-- REPRODUCTOR DE AUDIO FLOTANTE CON LOGOTIPO MODERNO -->
+    <!-- REPRODUCTOR DE AUDIO FLOTANTE -->
     <div class="audio-player-container" id="music-container">
         <div class="audio-logo-wrapper" id="logo-disco">
             <i class="fa-solid fa-compact-disc"></i>
@@ -382,95 +370,54 @@
         </div>
     </div>
 
-    <!-- ================= SECCIÓN GLOBAL DE CONTACTO ================= -->
+    <!-- ================= NUEVA SECCIÓN GLOBAL DE CONTACTO (SÚPER ACCESIBLE) ================= -->
     <section class="contact-section">
-        <h2>¡Contáctanos!</h2>
-        <p>¿Preguntas? Nos encantaría escucharte.</p>
+        <h2>¡Contáctanos Directamente!</h2>
+        <p class="contact-subtitle">¿Preguntas sobre las evidencias o el plantel? Elige tu método preferido y te responderemos de inmediato.</p>
         
-        <div class="contact-info-row">
-            <div class="info-item">
-                <i class="fa-solid fa-location-dot"></i>
-                <span>Colegio de Bachilleres</span>
-            </div>
-            <div class="info-item">
-                <i class="fa-solid fa-phone"></i>
-                <span>+55 XXXX-XXXX</span>
-            </div>
-            <div class="info-item">
-                <i class="fa-solid fa-envelope"></i>
-                <a href="mailto:urielzuniga23b@cancuntresbonfil.edu.mx">urielzuniga23b@cancuntresbonfil.edu.mx</a>
-            </div>
-        </div>
+        <div class="contact-buttons-container">
+            
+            <!-- BOTÓN 1: WHATSAPP DIRECTO -->
+            <!-- !!! REEMPLAZA LAS XXXXXXXXXX POR TU NÚMERO DE TELÉFONO REAL CON CÓDIGO DE PAÍS (EJ: 5219981234567) !!! -->
+            <a href="https://wa.me/521XXXXXXXXXX?text=Hola%20Uriel,%20vengo%20desde%20tu%20Portal%20de%20Evidencias%20y%20tengo%20una%20pregunta." target="_blank" class="contact-card-btn btn-whatsapp">
+                <i class="fa-brands fa-whatsapp"></i>
+                <span class="btn-title">WhatsApp</span>
+                <span class="btn-data">Chat directo</span>
+            </a>
 
-        <form class="contact-form" onsubmit="enviarCorreo(event)">
-            <div class="form-group">
-                <input type="text" id="form-name" placeholder="Tu nombre" required>
-            </div>
-            <div class="form-group">
-                <input type="email" id="form-email" placeholder="Tu correo" required>
-            </div>
-            <div class="form-group">
-                <textarea id="form-message" placeholder="Tu mensaje" required></textarea>
-            </div>
-            <div style="text-align: center; margin-top: 1.5rem;">
-                <button type="submit" class="btn-submit">
-                    <i class="fa-solid fa-paper-plane"></i> Enviar mensaje
-                </button>
-            </div>
-        </form>
+            <!-- BOTÓN 2: CORREO ELECTRÓNICO (Optimizado para Gmail/Webmail) -->
+            <a href="https://mail.google.com/mail/?view=cm&fs=1&to=urielzuniga23b@cancuntresbonfil.edu.mx&su=Contacto%20desde%20Portal%20de%20Evidencias&body=Hola%20Uriel,%20tengo%20una%20pregunta..." target="_blank" class="contact-card-btn btn-email">
+                <i class="fa-solid fa-envelope-open-text"></i>
+                <span class="btn-title">Enviar Correo</span>
+                <span class="btn-data">urielzuniga23b@cancuntresbonfil.edu.mx</span>
+            </a>
+
+        </div>
     </section>
 
     <footer>
-        <p>&copy; 2026 Plataforma Integradora de Evidencias Técnicas | Colegio de Bachilleres.</p>
+        <p>&copy; 2026 Plataforma Integradora de Evidencias Técnicas | Colegio de Bachilleres Cancún Tres Bonfil.</p>
     </footer>
 
     <script>
         const audio = document.getElementById('bg-music');
         const disco = document.getElementById('logo-disco');
 
-        // Monitorea el estado de la música para encender o apagar la rotación del logo
-        audio.addEventListener('play', () => {
-            disco.classList.add('rotar-logo');
-        });
-        audio.addEventListener('pause', () => {
-            disco.classList.remove('rotar-logo');
-        });
-
-        function enviarCorreo(event) {
-            event.preventDefault();
-            const nombre = document.getElementById('form-name').value;
-            const correoRemitente = document.getElementById('form-email').value;
-            const mensaje = document.getElementById('form-message').value;
-            
-            const correoDestino = "urielzuniga23b@cancuntresbonfil.edu.mx";
-            const asunto = encodeURIComponent("Contacto desde Portal de Evidencias - " + nombre);
-            const cuerpo = encodeURIComponent(
-                "Nombre: " + nombre + "\n" +
-                "Correo de contacto: " + correoRemitente + "\n\n" +
-                "Mensaje:\n" + mensaje
-            );
-            
-            window.location.href = `mailto:${correoDestino}?subject=${asunto}&body=${cuerpo}`;
-        }
+        audio.addEventListener('play', () => { disco.classList.add('rotar-logo'); });
+        audio.addEventListener('pause', () => { disco.classList.remove('rotar-logo'); });
 
         function switchTab(sectionId) {
-            document.querySelectorAll('.section-content').forEach(sec => {
-                sec.classList.remove('active');
-            });
+            document.querySelectorAll('.section-content').forEach(sec => { sec.classList.remove('active'); });
             document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
-            
             const activeSection = document.getElementById('sec-' + sectionId);
             activeSection.classList.add('active');
-            
             event.currentTarget.classList.add('active');
             window.scrollTo({top: 0, behavior: 'smooth'});
         }
 
         function desbloquearAudio() {
             if (audio && audio.paused) {
-                audio.play().catch(function(error) {
-                    console.log("Esperando interacción.");
-                });
+                audio.play().catch(function(error) { console.log("Esperando interacción."); });
             }
         }
 
