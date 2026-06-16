@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portal de Evidencias Académicas | Inicio</title>
+    <!-- Iconos FontAwesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         /* Estilos Generales y Reset */
@@ -49,6 +50,7 @@
             background-position: center;
             background-repeat: no-repeat;
         }
+        /* Mantenemos la referencia de diseño de IMG_20260615_191107567_MFNR.jpg para contrastes oscuros */
         #hero-programacion { border-bottom: 6px solid #00e676; }
         #hero-salud { border-bottom: 6px solid #52b788; }
         #hero-eventos { border-bottom: 6px solid #e0a96d; }
@@ -85,23 +87,20 @@
             padding: 12px; 
             text-align: center; 
             box-shadow: 0 2px 5px rgba(0,0,0,0.02);
-            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1); /* Suaviza el movimiento */
+            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1); 
             cursor: pointer;
         }
 
-        /* Al pasar el mouse o mantener presionado en el teléfono */
         .media-item:hover, .media-item:active {
-            transform: translateY(-8px) scale(1.03); /* Se eleva y crece un poco */
-            box-shadow: 0 12px 20px rgba(0, 0, 0, 0.12); /* Sombra proyectada */
+            transform: translateY(-8px) scale(1.03); 
+            box-shadow: 0 12px 20px rgba(0, 0, 0, 0.12); 
             background: #ffffff;
         }
         
-        /* Cambios de color de borde interactivo según la sección activa */
         .card-prog .media-item:hover { border-color: #00e676; }
         .card-salud .media-item:hover { border-color: #52b788; }
         .card-event .media-item:hover { border-color: #e0a96d; }
 
-        /* Estilo interno para las fotos y reproductores de video */
         .media-item img, .media-item video { 
             width: 100%; 
             height: 210px; 
@@ -111,12 +110,11 @@
             display: block; 
             transition: filter 0.3s ease;
         }
-        /* Las imágenes brillan ligeramente al interactuar */
         .media-item:hover img { filter: brightness(1.05); }
         
         .media-caption { font-size: 0.8rem; color: #64748b; margin-top: 10px; font-weight: 600; font-family: monospace; }
 
-        /* SECCIÓN: ¡CONTÁCTANOS! */
+        /* SECCIÓN: ¡CONTÁCTANOS! (Fiel a la foto IMG_20260615_191107567_MFNR.jpg) */
         .contact-section { 
             background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%); 
             color: #ffffff; 
@@ -147,7 +145,6 @@
             font-family: inherit;
             transition: all 0.3s ease;
         }
-        /* Efecto de enfoque en los campos del formulario */
         .contact-form input:focus, .contact-form textarea:focus {
             background-color: #ffffff;
             border-color: #3b82f6;
@@ -177,15 +174,11 @@
 
         footer { text-align: center; padding: 2.5rem 1rem; background: #070a12; color: #64748b; font-size: 0.85rem; }
 
-        /* ================= DEFINICIÓN DE ANIMACIONES CSS ================= */
-        
-        /* 1. Efecto suave de entrada general */
+        /* ANIMACIONES CSS */
         @keyframes entradaPagina {
             from { opacity: 0; transform: translateY(20px); filter: blur(4px); }
             to { opacity: 1; transform: translateY(0); filter: blur(0); }
         }
-
-        /* 2. Efecto dinámico de rebote elástico al cambiar de pestaña */
         @keyframes deslizarPestaña {
             0% { opacity: 0; transform: translateX(-15px); }
             100% { opacity: 1; transform: translateX(0); }
@@ -194,10 +187,12 @@
 </head>
 <body>
 
+    <!-- REPRODUCTOR DE AUDIO FLOTANTE -->
     <div class="audio-player-container">
         <audio id="bg-music" src="./musica.mp3" controls autoplay loop playsinline></audio>
     </div>
 
+    <!-- BARRA DE NAVEGACIÓN -->
     <nav>
         <div class="nav-container">
             <button class="tab-btn active" onclick="switchTab('programacion')">Programación</button>
@@ -206,6 +201,7 @@
         </div>
     </nav>
 
+    <!-- ================= SECCIÓN 1: PROGRAMACIÓN ================= -->
     <div id="sec-programacion" class="section-content active">
         <section class="hero" id="hero-programacion">
             <h1>Capacitación en <span style="color: #00e676;">Programación</span></h1>
@@ -271,6 +267,7 @@
         </div>
     </div>
 
+    <!-- ================= SECCIÓN 2: CUIDADO DE LA SALUD ================= -->
     <div id="sec-salud" class="section-content">
         <section class="hero" id="hero-salud">
             <h1>Cuidado de la <span style="color: #52b788;">Salud</span> y <span style="color: #52b788;">Naturaleza</span></h1>
@@ -294,6 +291,7 @@
         </div>
     </div>
 
+    <!-- ================= SECCIÓN 3: EVENTOS ================= -->
     <div id="sec-eventos" class="section-content">
         <section class="hero" id="hero-eventos">
             <h1><span style="color: #e0a96d;">Evento</span> y <span style="color: #e0a96d;">Capacitaciones</span></h1>
@@ -329,6 +327,7 @@
         </div>
     </div>
 
+    <!-- ================= SECCIÓN GLOBAL DE CONTACTO CORREGIDA ================= -->
     <section class="contact-section">
         <h2>¡Contáctanos!</h2>
         <p>¿Preguntas? Nos encantaría escucharte.</p>
@@ -348,15 +347,16 @@
             </div>
         </div>
 
-        <form class="contact-form" action="https://formspree.io/f/xoqgkgpw" method="POST" target="_blank">
+        <!-- Formulario configurado con JavaScript nativo para evitar errores de servidor externo -->
+        <form class="contact-form" onsubmit="enviarCorreo(event)">
             <div class="form-group">
-                <input type="text" name="name" placeholder="Tu nombre" required>
+                <input type="text" id="form-name" placeholder="Tu nombre" required>
             </div>
             <div class="form-group">
-                <input type="email" name="email" placeholder="Tu correo" required>
+                <input type="email" id="form-email" placeholder="Tu correo" required>
             </div>
             <div class="form-group">
-                <textarea name="message" placeholder="Tu mensaje" required></textarea>
+                <textarea id="form-message" placeholder="Tu mensaje" required></textarea>
             </div>
             <div style="text-align: center; margin-top: 1.5rem;">
                 <button type="submit" class="btn-submit">
@@ -371,14 +371,34 @@
     </footer>
 
     <script>
+        // Función inteligente para procesar el envío sin depender de servidores
+        function enviarCorreo(event) {
+            event.preventDefault(); // Detiene la recarga de página molesta
+            
+            const nombre = document.getElementById('form-name').value;
+            const correoRemitente = document.getElementById('form-email').value;
+            const mensaje = document.getElementById('form-message').value;
+            
+            const correoDestino = "urielzuniga23b@cancuntresbonfil.edu.mx";
+            const asunto = encodeURIComponent("Contacto desde Portal de Evidencias - " + nombre);
+            
+            // Cuerpo estructurado del correo
+            const cuerpo = encodeURIComponent(
+                "Nombre: " + nombre + "\n" +
+                "Correo de contacto: " + correoRemitente + "\n\n" +
+                "Mensaje:\n" + mensaje
+            );
+            
+            // Abre de inmediato el cliente de correo sin errores de servidor
+            window.location.href = `mailto:${correoDestino}?subject=${asunto}&body=${cuerpo}`;
+        }
+
         function switchTab(sectionId) {
-            // Remueve la clase activa para reiniciar la animación al cambiar de pestaña
             document.querySelectorAll('.section-content').forEach(sec => {
                 sec.classList.remove('active');
             });
             document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
             
-            // Activa la sección seleccionada desencadenando la animación CSS
             const activeSection = document.getElementById('sec-' + sectionId);
             activeSection.classList.add('active');
             
