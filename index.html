@@ -9,9 +9,16 @@
         *, *::before, *::after { box-sizing: border-box; }
         body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; margin: 0; padding: 0; background-color: #f4f6f9; color: #2c3e50; }
         
-        /* Menú de Navegación por Pestañas */
+        /* Menú de Navegación por Pestañas con LOGO */
         nav { background-color: #0d1b2a; position: sticky; top: 0; z-index: 1000; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
-        .nav-container { max-width: 1000px; margin: 0 auto; display: flex; justify-content: center; gap: 10px; padding: 0.8rem 1rem; }
+        .nav-container { max-width: 1100px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; padding: 0.5rem 1.5rem; }
+        
+        /* Contenedor del Logo */
+        .nav-logo { display: flex; align-items: center; }
+        .nav-logo img { height: 45px; width: auto; object-fit: contain; border-radius: 4px; background-color: rgba(255,255,255,0.1); padding: 2px; }
+        
+        /* Contenedor de los Botones */
+        .nav-tabs { display: flex; gap: 10px; }
         .tab-btn { background: none; border: 2px solid transparent; color: #e0e1dd; padding: 0.6rem 1.2rem; font-size: 0.95rem; font-weight: 600; border-radius: 6px; cursor: pointer; transition: all 0.3s ease; }
         .tab-btn:hover { background-color: rgba(255, 255, 255, 0.1); color: #ffffff; }
         .tab-btn.active { background-color: #e0a96d; color: #0d1b2a; border-color: #e0a96d; }
@@ -50,6 +57,14 @@
         .audio-player-container audio { height: 30px; width: 220px; }
 
         footer { text-align: center; padding: 2.5rem 1rem; background: #0d1b2a; color: #e0e1dd; margin-top: 5rem; font-size: 0.85rem; }
+        
+        /* Ajuste para pantallas pequeñas / Celulares */
+        @media (max-width: 600px) {
+            .nav-container { flex-direction: column; gap: 10px; }
+            .nav-tabs { width: 100%; justify-content: center; flex-wrap: wrap; }
+            .tab-btn { padding: 0.4rem 0.8rem; font-size: 0.85rem; }
+        }
+
         @keyframes fadeIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
     </style>
 </head>
@@ -61,9 +76,14 @@
 
     <nav>
         <div class="nav-container">
-            <button class="tab-btn active" onclick="switchTab('programacion')">Programación</button>
-            <button class="tab-btn" onclick="switchTab('salud')">Salud y Naturaleza</button>
-            <button class="tab-btn" onclick="switchTab('eventos')">Eventos y Capacitaciones</button>
+            <div class="nav-logo">
+                <img src="./logo.jpg" alt="Logo Colegio de Bachilleres">
+            </div>
+            <div class="nav-tabs">
+                <button class="tab-btn active" onclick="switchTab('programacion')">Programación</button>
+                <button class="tab-btn" onclick="switchTab('salud')">Salud y Naturaleza</button>
+                <button class="tab-btn" onclick="switchTab('eventos')">Eventos y Capacitaciones</button>
+            </div>
         </div>
     </nav>
 
@@ -191,7 +211,7 @@
     </div>
 
     <footer>
-        <p>&copy; 2026 Plataforma Integradora de Evidencias Técnicas.</p>
+        <p>&copy; 2026 Plataforma Integradora de Evidencias Técnicas | Colegio de Bachilleres.</p>
     </footer>
 
     <script>
@@ -203,17 +223,15 @@
             window.scrollTo({top: 0, behavior: 'smooth'});
         }
 
-        // Activador de audio bypass para restricciones de navegadores modernos
         function desbloquearAudio() {
             var audio = document.getElementById('bg-music');
             if (audio && audio.paused) {
                 audio.play().catch(function(error) {
-                    console.log("Esperando una interacción directa para soltar el codec de audio.");
+                    console.log("Esperando interacción.");
                 });
             }
         }
 
-        // Detecta cualquier mínimo amago de interacción del profesor para encender la pista musica.mp3
         window.addEventListener('scroll', desbloquearAudio, { once: true });
         window.addEventListener('mousemove', desbloquearAudio, { once: true });
         window.addEventListener('touchstart', desbloquearAudio, { once: true });
