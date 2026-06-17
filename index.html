@@ -38,7 +38,7 @@
         .tab-btn:active { transform: translateY(1px); }
         .tab-btn.active { background-color: #e0a96d; color: #0d1b2a; border-color: #e0a96d; box-shadow: 0 4px 10px rgba(224, 169, 109, 0.3); }
 
-        /* Banners Superiores con Imagen de Fondo (Referencia IMG_20260615_191107567_MFNR.jpg) */
+        /* Banners Superiores con Imagen de Fondo */
         .hero { 
             color: #ffffff; 
             padding: 6rem 2rem; 
@@ -108,7 +108,7 @@
         .media-item:hover img { filter: brightness(1.05); }
         .media-caption { font-size: 0.8rem; color: #64748b; margin-top: 10px; font-weight: 600; font-family: monospace; }
 
-        /* ================= REDISEÑO DE LA SECCIÓN DE CONTACTO (NUEVA) ================= */
+        /* ================= SECCIÓN DE CONTACTO ACCESIBLE ================= */
         .contact-section { 
             background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%); 
             color: #ffffff; 
@@ -119,7 +119,6 @@
         .contact-section h2 { color: #ffffff; font-size: 2.8rem; margin-bottom: 0.5rem; font-weight: 800; }
         .contact-section p.contact-subtitle { color: #94a3b8; font-size: 1.2rem; margin-bottom: 3.5rem; max-width: 600px; margin-left: auto; margin-right: auto; }
         
-        /* Contenedor de botones de contacto */
         .contact-buttons-container {
             display: flex;
             justify-content: center;
@@ -129,7 +128,6 @@
             margin: 0 auto;
         }
 
-        /* Estilo base de los botones de contacto */
         .contact-card-btn {
             background-color: rgba(255, 255, 255, 0.03);
             border: 1px solid rgba(255, 255, 255, 0.1);
@@ -146,42 +144,23 @@
             position: relative;
             overflow: hidden;
         }
-
-        /* Efecto hover en los botones */
         .contact-card-btn:hover {
             transform: translateY(-10px);
             background-color: rgba(255, 255, 255, 0.07);
             box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
         }
 
-        /* Iconos grandes */
-        .contact-card-btn i {
-            font-size: 3.5rem;
-            margin-bottom: 10px;
-            transition: transform 0.3s ease;
-        }
-        .contact-card-btn:hover i {
-            transform: scale(1.1);
-        }
+        .contact-card-btn i { font-size: 3.5rem; margin-bottom: 10px; transition: transform 0.3s ease; }
+        .contact-card-btn:hover i { transform: scale(1.1); }
 
-        /* Títulos y textos de los botones */
-        .contact-card-btn span.btn-title {
-            font-size: 1.3rem;
-            font-weight: 700;
-            color: #ffffff;
-        }
-        .contact-card-btn span.btn-data {
-            font-size: 0.95rem;
-            color: #94a3b8;
-            font-family: monospace;
-            word-break: break-all;
-        }
+        .contact-card-btn span.btn-title { font-size: 1.3rem; font-weight: 700; color: #ffffff; }
+        .contact-card-btn span.btn-data { font-size: 0.95rem; color: #94a3b8; font-family: monospace; word-break: break-all; }
 
-        /* Colores específicos para WhatsApp */
+        /* WhatsApp */
         .btn-whatsapp i { color: #25D366; }
         .btn-whatsapp:hover { border-color: #25D366; box-shadow: 0 15px 30px rgba(37, 211, 102, 0.2); }
 
-        /* Colores específicos para Correo */
+        /* Correo */
         .btn-email i { color: #ea4335; }
         .btn-email:hover { border-color: #ea4335; box-shadow: 0 15px 30px rgba(234, 67, 53, 0.2); }
 
@@ -370,19 +349,18 @@
         </div>
     </div>
 
-    <!-- ================= NUEVA SECCIÓN GLOBAL DE CONTACTO (SÚPER ACCESIBLE) ================= -->
+    <!-- ================= SECCIÓN GLOBAL DE CONTACTO ACTUALIZADA ================= -->
     <section class="contact-section">
         <h2>¡Contáctanos Directamente!</h2>
         <p class="contact-subtitle">¿Preguntas sobre las evidencias o el plantel? Elige tu método preferido y te responderemos de inmediato.</p>
         
         <div class="contact-buttons-container">
             
-            <!-- BOTÓN 1: WHATSAPP DIRECTO -->
-            <!-- !!! REEMPLAZA LAS XXXXXXXXXX POR TU NÚMERO DE TELÉFONO REAL CON CÓDIGO DE PAÍS (EJ: 5219981234567) !!! -->
-            <a href="https://wa.me/521XXXXXXXXXX?text=Hola%20Uriel,%20vengo%20desde%20tu%20Portal%20de%20Evidencias%20y%20tengo%20una%20pregunta." target="_blank" class="contact-card-btn btn-whatsapp">
+            <!-- BOTÓN 1: WHATSAPP DIRECTO CON TU NÚMERO CONFIGURADO -->
+            <a href="https://wa.me/5219983376969?text=Hola%20Uriel,%20vengo%20desde%20tu%20Portal%20de%20Evidencias%20y%20tengo%20una%20pregunta." target="_blank" class="contact-card-btn btn-whatsapp">
                 <i class="fa-brands fa-whatsapp"></i>
                 <span class="btn-title">WhatsApp</span>
-                <span class="btn-data">Chat directo</span>
+                <span class="btn-data">998 337 6969</span>
             </a>
 
             <!-- BOTÓN 2: CORREO ELECTRÓNICO (Optimizado para Gmail/Webmail) -->
